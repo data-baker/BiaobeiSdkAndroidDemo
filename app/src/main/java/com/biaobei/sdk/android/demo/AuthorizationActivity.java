@@ -80,7 +80,7 @@ public class AuthorizationActivity extends AppCompatActivity {
             @Override
             public void onError(String s) {
                 removeParameter();
-                Toast.makeText(AuthorizationActivity.this, s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(AuthorizationActivity.this, "ClientId/ClientSecret校验失败", Toast.LENGTH_SHORT).show();
             }
         });
 

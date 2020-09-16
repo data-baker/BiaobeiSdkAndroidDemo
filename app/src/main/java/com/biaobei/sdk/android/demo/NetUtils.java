@@ -75,7 +75,7 @@ public class NetUtils {
                             if (token != null && !TextUtils.isEmpty(token.getAccess_token())) {
                                 listener.onSuccess("获取成功");
                             } else {
-                                listener.onError("获取失败");
+                                listener.onError("校验失败");
                             }
                         }
                     });

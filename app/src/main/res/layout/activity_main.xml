@@ -12,7 +12,8 @@
         android:layout_margin="5dp"
         android:gravity="center"
         android:onClick="tts"
-        android:text="标贝 TTS 体验"
+        android:text="标贝在线TTS（流式）"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BiaobeiSdkAndroidDemo</string>
+    <string name="app_name">标贝科技</string>
     <string name="string_audio_track_player">在线SDK无播放器示例</string>
     <string name="string_media_track_player">在线SDK含播放器示例</string>
 

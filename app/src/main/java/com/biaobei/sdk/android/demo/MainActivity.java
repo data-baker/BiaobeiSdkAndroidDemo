@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, AuthorizationActivity.class).putExtra(AuthorizationActivity.EXPERIENCE_TYPE, "tts_online"));
     }
 
+    public void asr(View v) {
+        startActivity(new Intent(MainActivity.this, AuthorizationActivity.class).putExtra(AuthorizationActivity.EXPERIENCE_TYPE, "asr_online"));
+    }
+
 }

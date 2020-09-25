@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keepattributes Exceptions,InnerClasses,...
--keep public class com.databaker.synthesizer.BakerConstants{*;}
+-keep public class com.databaker.synthesizer.BakerSynthesizerErrorConstants{*;}
 -keep public class com.databaker.synthesizer.BakerCallback{*;}
 -keep public class com.databaker.synthesizer.SynthesizerCallback{*;}
 -keep public class com.databaker.synthesizer.BakerMediaCallback{*;}

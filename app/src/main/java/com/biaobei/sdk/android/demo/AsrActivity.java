@@ -12,10 +12,10 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
+import com.baker.sdk.basecomponent.bean.BakerError;
 import com.baker.sdk.basecomponent.util.HLogger;
 import com.baker.speech.asr.BakerRecognizer;
 import com.baker.speech.asr.basic.BakerRecognizerCallback;
-import com.baker.speech.asr.bean.BakerError;
 import com.biaobei.sdk.android.demo.permission.PermissionUtil;
 import com.blankj.utilcode.util.UriUtils;
 
@@ -50,7 +50,15 @@ public class AsrActivity extends AppCompatActivity implements BakerRecognizerCal
 
         bakerRecognizer = BakerRecognizer.getInstance(AsrActivity.this, clientId, clientSecret);
         bakerRecognizer.setCallback(this);
-        bakerRecognizer.setDebug(AsrActivity.this);
+//        bakerRecognizer.setDebug(AsrActivity.this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bakerRecognizer != null) {
+            bakerRecognizer.cancelRecognize();
+        }
     }
 
     @Override

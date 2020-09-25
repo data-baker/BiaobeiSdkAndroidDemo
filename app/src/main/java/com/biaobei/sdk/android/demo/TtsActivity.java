@@ -1,22 +1,18 @@
 package com.biaobei.sdk.android.demo;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.databaker.synthesizer.BakerConstants;
+import com.baker.sdk.basecomponent.BakerBaseConstants;
+import com.baker.sdk.basecomponent.bean.BakerError;
 import com.databaker.synthesizer.BakerMediaCallback;
 import com.databaker.synthesizer.BakerSynthesizer;
-import com.databaker.synthesizer.bean.BakerError;
 
 public class TtsActivity extends AppCompatActivity {
 
@@ -39,7 +35,7 @@ public class TtsActivity extends AppCompatActivity {
         resultTv = findViewById(R.id.tv);
         resultTv.setMovementMethod(ScrollingMovementMethod.getInstance());
         bakerSynthesizer = new BakerSynthesizer(this, clientId, clientSecret);
-        bakerSynthesizer.setDebug(this, true);
+        bakerSynthesizer.setDebug(this, false);
 
     }
 
@@ -47,7 +43,7 @@ public class TtsActivity extends AppCompatActivity {
 //        //开始合成，合成结束后会自动stop
         if (bakerSynthesizer == null) {
             bakerSynthesizer = new BakerSynthesizer(this);
-            bakerSynthesizer.setDebug(this, true);
+            bakerSynthesizer.setDebug(this, false);
         }
         setParams();
         bakerSynthesizer.start();
@@ -111,7 +107,7 @@ public class TtsActivity extends AppCompatActivity {
         //设置发音人声音名称，默认：标准合成_模仿儿童_果子
         bakerSynthesizer.setVoice("新闻合成_天天");
         //合成请求文本的语言，目前支持ZH(中文和中英混)和ENG(纯英文，中文部分不会合成),默认：ZH
-        bakerSynthesizer.setLanguage(BakerConstants.LANGUAGE_ZH);
+        bakerSynthesizer.setLanguage(BakerBaseConstants.LANGUAGE_ZH);
         //设置播放的语速，在0～9之间（支持浮点值），不传时默认为5
         bakerSynthesizer.setSpeed(5.0f);
         //设置语音的音量，在0～9之间（只支持整型值），不传时默认值为5
@@ -125,7 +121,7 @@ public class TtsActivity extends AppCompatActivity {
          * audiotype=6 ：返回16K采样率的wav格式
          * audiotype=6&rate=1 ：返回8K的wav格式
          */
-        bakerSynthesizer.setAudioType(BakerConstants.AUDIO_TYPE_PCM_16K);
+        bakerSynthesizer.setAudioType(BakerBaseConstants.AUDIO_TYPE_PCM_16K);
 //        bakerSynthesizer.setRate(1);
     }
 
@@ -185,7 +181,11 @@ public class TtsActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+
         if (bakerSynthesizer != null) {
+            if (bakerSynthesizer.isPlaying()) {
+                bakerSynthesizer.bakerStop();
+            }
             bakerSynthesizer.onDestroy();
         }
         super.onDestroy();

@@ -22,6 +22,7 @@ public class AuthorizationActivity extends AppCompatActivity {
     private String type;
 
     private static final String TTS_ONLINE_CLIENT_ID = "tts_online_client_id", TTS_ONLINE_CLIENT_SECRET = "tts_online_client_secret";
+    private static final String ASR_ONLINE_CLIENT_ID = "asr_online_client_id", ASR_ONLINE_CLIENT_SECRET = "asr_online_client_secret";
 
     private SharedPreferences mSharedPreferences;
 
@@ -46,11 +47,22 @@ public class AuthorizationActivity extends AppCompatActivity {
             switch (type) {
                 case "tts_online":
                     //体验tts,授权tts获取token
+                    setTitle(getString(R.string.app_name) + "（在线tts授权页）");
                     if (!TextUtils.isEmpty(sharedPreferencesGet(TTS_ONLINE_CLIENT_ID))) {
                         etClientId.setText(sharedPreferencesGet(TTS_ONLINE_CLIENT_ID));
                     }
                     if (!TextUtils.isEmpty(sharedPreferencesGet(TTS_ONLINE_CLIENT_SECRET))) {
                         etClientSecret.setText(sharedPreferencesGet(TTS_ONLINE_CLIENT_SECRET));
+                    }
+                    break;
+                case "asr_online":
+                    //体验asr,授权tts获取token
+                    setTitle(getString(R.string.app_name) + "（在线asr授权页）");
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(ASR_ONLINE_CLIENT_ID))) {
+                        etClientId.setText(sharedPreferencesGet(ASR_ONLINE_CLIENT_ID));
+                    }
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(ASR_ONLINE_CLIENT_SECRET))) {
+                        etClientSecret.setText(sharedPreferencesGet(ASR_ONLINE_CLIENT_SECRET));
                     }
                     break;
             }
@@ -71,10 +83,10 @@ public class AuthorizationActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String s) {
                 storageParameter();
-                Intent mIntent = new Intent(AuthorizationActivity.this, TtsActivity.class);
-                mIntent.putExtra("ClientId", etClientId.getText().toString().trim());
-                mIntent.putExtra("ClientSecret", etClientSecret.getText().toString().trim());
-                startActivity(mIntent);
+//                Intent mIntent = new Intent(AuthorizationActivity.this, TtsActivity.class);
+//                mIntent.putExtra("ClientId", etClientId.getText().toString().trim());
+//                mIntent.putExtra("ClientSecret", etClientSecret.getText().toString().trim());
+//                startActivity(mIntent);
             }
 
             @Override
@@ -93,12 +105,22 @@ public class AuthorizationActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(type)) return;
         String clientId = etClientId.getText().toString().trim();
         String clientSecret = etClientSecret.getText().toString().trim();
+        Intent mIntent = new Intent();
         switch (type) {
             case "tts_online":
                 sharedPreferencesCommit(TTS_ONLINE_CLIENT_ID, clientId);
                 sharedPreferencesCommit(TTS_ONLINE_CLIENT_SECRET, clientSecret);
+                mIntent.setClass(AuthorizationActivity.this, TtsActivity.class);
+                break;
+            case "asr_online":
+                sharedPreferencesCommit(ASR_ONLINE_CLIENT_ID, clientId);
+                sharedPreferencesCommit(ASR_ONLINE_CLIENT_SECRET, clientSecret);
+                mIntent.setClass(AuthorizationActivity.this, AsrActivity.class);
                 break;
         }
+        mIntent.putExtra("ClientId", etClientId.getText().toString().trim());
+        mIntent.putExtra("ClientSecret", etClientSecret.getText().toString().trim());
+        startActivity(mIntent);
     }
 
     /**
@@ -110,6 +132,10 @@ public class AuthorizationActivity extends AppCompatActivity {
             case "tts_online":
                 sharedPreferencesRemove(TTS_ONLINE_CLIENT_ID);
                 sharedPreferencesRemove(TTS_ONLINE_CLIENT_SECRET);
+                break;
+            case "asr_online":
+                sharedPreferencesRemove(ASR_ONLINE_CLIENT_ID);
+                sharedPreferencesRemove(ASR_ONLINE_CLIENT_SECRET);
                 break;
         }
     }

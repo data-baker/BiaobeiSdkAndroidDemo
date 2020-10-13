@@ -15,4 +15,7 @@
     <string name="string_start_recognize">开始识别（默认使用手机麦克风识别）</string>
     <string name="string_stop_recognize">结束识别</string>
     <string name="string_select_file">打开文件管理器选择，仅支持.pcm文件</string>
+
+    <string name="string_socket_tts">标贝在线TTS（流式）</string>
+    <string name="string_socket_asr">标贝在线ASR（流式）</string>
 </resources>

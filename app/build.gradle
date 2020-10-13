@@ -32,21 +32,8 @@ dependencies {
 
     api 'com.squareup.okhttp3:okhttp:4.2.2'
     api 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.databaker.synthesizer:synthesizer:2.2.2'
-    implementation 'com.baker.speech.asr:speechasr:1.2.1'
+    implementation 'com.databaker.synthesizer:synthesizer:2.2.+'
+    implementation 'com.baker.speech.asr:bakerasr:1.2.+'
     implementation 'com.blankj:utilcodex:1.29.0'
-    implementation 'com.baker.sdk.basecomponent:bakerbasecomponent:1.0.0'
+    implementation 'com.baker.sdk.basecomponent:bakerbasecomponent:1.0.+'
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

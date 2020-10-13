@@ -39,6 +39,7 @@
             android:id="@+id/stopRecognize"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:onClick="onClick"
             android:text="@string/string_stop_recognize" />

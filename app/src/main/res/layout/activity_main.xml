@@ -4,22 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="tts"
-        android:padding="10dp"
-        android:text="标贝在线TTS（流式）"
+        android:text="@string/string_socket_tts"
         android:textSize="24sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="asr"
-        android:padding="10dp"
-        android:text="标贝在线ASR（流式）"
+        android:text="@string/string_socket_asr"
         android:textSize="24sp" />
 
 </LinearLayout>

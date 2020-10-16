@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.biaobei.sdk.android.demo.longtime.LongTimeActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,4 +24,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, AuthorizationActivity.class).putExtra(AuthorizationActivity.EXPERIENCE_TYPE, "asr_online"));
     }
 
+    public void longTimeAsr(View v) {
+        startActivity(new Intent(MainActivity.this, AuthorizationActivity.class).putExtra(AuthorizationActivity.EXPERIENCE_TYPE, "long_time_asr_online"));
+    }
 }

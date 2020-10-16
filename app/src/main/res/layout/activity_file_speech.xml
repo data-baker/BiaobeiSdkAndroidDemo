@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".asr.FileSpeechActivity">
+
+    <Button
+        android:id="@+id/asr_assets_pcm_file"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:onClick="onClick"
+        android:text="识别应用自带的一段pcm音频" />
+
+    <Button
+        android:id="@+id/startRecognizeUseCustomFile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:onClick="onClick"
+        android:text="打开文件管理器选择，仅支持.pcm文件" />
+
+    <Button
+        android:id="@+id/stopRecognize"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="@string/string_stop_recognize" />
+
+    <TextView
+        android:id="@+id/tv_Status"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:fadeScrollbars="false"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:scrollbarFadeDuration="1000"
+        android:scrollbarStyle="insideOverlay"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_Result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:paddingStart="30dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="30dp"
+        android:scrollbarFadeDuration="1000"
+        android:scrollbarStyle="insideOverlay"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+</LinearLayout>

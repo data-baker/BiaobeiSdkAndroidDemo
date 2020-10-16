@@ -197,9 +197,16 @@
 -keep class com.baker.speech.asr.basic.**{*;}
 -keep class com.baker.speech.asr.bean.**{*;}
 -keep class com.baker.speech.asr.utils.**{*;}
--keep public class com.baker.speech.asr.BakerConstants{*;}
+-keep public class com.baker.speech.asr.AsrConstants{*;}
 -keep public class com.baker.speech.asr.BakerRecognizer{
     public <methods>;
 }
 -keep public class com.baker.speech.asr.vadJni{*;}
 -keep public class com.baker.speech.asr.event.EventManagerMultiNet$BakerWebSocketListener{*;}
+
+-keep public class com.baker.sdk.longtime.asr.LongTimeAsr{*;}
+-keep public class com.baker.sdk.longtime.asr.base.BakerLongTimeAsrConstants{*;}
+-keep public class com.baker.sdk.longtime.asr.listener.LongTimeAsrCallBack{*;}
+-keep class com.baker.sdk.longtime.asr.bean.**{*;} ##这里包名需要改成自己的java bean包
+-keep class com.baker.sdk.basecomponent.**{*;}
+-keep class com.baker.sdk.http.**{*;}

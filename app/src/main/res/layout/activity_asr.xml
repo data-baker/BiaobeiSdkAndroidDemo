@@ -4,46 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AsrActivity">
+    tools:context=".asr.AsrActivity">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/startRecognize"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="60dp"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:layout_margin="10dp"
+        android:onClick="onClick"
+        android:text="@string/string_start_recognize" />
 
-
-            <Button
-                android:id="@+id/startRecognize"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                android:text="@string/string_start_recognize" />
-
-            <Button
-                android:id="@+id/startRecognizeUseCustomFile"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                android:text="@string/string_select_file" />
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/stopRecognize"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="@string/string_stop_recognize" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/stopRecognize"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="@string/string_stop_recognize" />
 
     <TextView
         android:id="@+id/tv_Status"

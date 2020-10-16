@@ -18,13 +18,28 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AsrActivity"
+            android:name=".longtime.LongTimeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tts.TtsSelectFunctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tts.AudioTrackPlayerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".asr.FileSpeechActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".asr.AsrSelectFunctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".asr.AsrActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AuthorizationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TtsActivity"
+            android:name=".tts.TtsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

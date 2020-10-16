@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.biaobei.sdk.android.demo.asr.AsrSelectFunctionActivity;
+import com.biaobei.sdk.android.demo.longtime.LongTimeActivity;
+import com.biaobei.sdk.android.demo.tts.TtsSelectFunctionActivity;
+
 /**
  * 开发着无需关注此页面。SDK内部会校验token
  * 该页面是提供给体验者直接输入client_id以及client_secret体验标贝SDKDemo的
@@ -21,8 +25,6 @@ public class AuthorizationActivity extends AppCompatActivity {
     public static final String EXPERIENCE_TYPE = "type";
     private String type;
 
-    private static final String TTS_ONLINE_CLIENT_ID = "tts_online_client_id", TTS_ONLINE_CLIENT_SECRET = "tts_online_client_secret";
-    private static final String ASR_ONLINE_CLIENT_ID = "asr_online_client_id", ASR_ONLINE_CLIENT_SECRET = "asr_online_client_secret";
 
     private SharedPreferences mSharedPreferences;
 
@@ -41,28 +43,38 @@ public class AuthorizationActivity extends AppCompatActivity {
     private void init() {
         etClientId = findViewById(R.id.et_client_id);
         etClientSecret = findViewById(R.id.et_client_secret);
-        mSharedPreferences = getSharedPreferences(AuthorizationActivity.class.getName(), Context.MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences(Constants.SP_TABLE_NAME, Context.MODE_PRIVATE);
         type = getIntent().getStringExtra(AuthorizationActivity.EXPERIENCE_TYPE);
         if (!TextUtils.isEmpty(type)) {
             switch (type) {
                 case "tts_online":
                     //体验tts,授权tts获取token
                     setTitle(getString(R.string.app_name) + "（在线tts授权页）");
-                    if (!TextUtils.isEmpty(sharedPreferencesGet(TTS_ONLINE_CLIENT_ID))) {
-                        etClientId.setText(sharedPreferencesGet(TTS_ONLINE_CLIENT_ID));
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.TTS_ONLINE_CLIENT_ID))) {
+                        etClientId.setText(sharedPreferencesGet(Constants.TTS_ONLINE_CLIENT_ID));
                     }
-                    if (!TextUtils.isEmpty(sharedPreferencesGet(TTS_ONLINE_CLIENT_SECRET))) {
-                        etClientSecret.setText(sharedPreferencesGet(TTS_ONLINE_CLIENT_SECRET));
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.TTS_ONLINE_CLIENT_SECRET))) {
+                        etClientSecret.setText(sharedPreferencesGet(Constants.TTS_ONLINE_CLIENT_SECRET));
                     }
                     break;
                 case "asr_online":
                     //体验asr,授权tts获取token
                     setTitle(getString(R.string.app_name) + "（在线asr授权页）");
-                    if (!TextUtils.isEmpty(sharedPreferencesGet(ASR_ONLINE_CLIENT_ID))) {
-                        etClientId.setText(sharedPreferencesGet(ASR_ONLINE_CLIENT_ID));
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.ASR_ONLINE_CLIENT_ID))) {
+                        etClientId.setText(sharedPreferencesGet(Constants.ASR_ONLINE_CLIENT_ID));
                     }
-                    if (!TextUtils.isEmpty(sharedPreferencesGet(ASR_ONLINE_CLIENT_SECRET))) {
-                        etClientSecret.setText(sharedPreferencesGet(ASR_ONLINE_CLIENT_SECRET));
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.ASR_ONLINE_CLIENT_SECRET))) {
+                        etClientSecret.setText(sharedPreferencesGet(Constants.ASR_ONLINE_CLIENT_SECRET));
+                    }
+                    break;
+                case "long_time_asr_online":
+                    //体验长语音asr,授权tts获取token
+                    setTitle(getString(R.string.app_name) + "（在线长语音asr授权页）");
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.LONG_TIME_ASR_ONLINE_CLIENT_ID))) {
+                        etClientId.setText(sharedPreferencesGet(Constants.LONG_TIME_ASR_ONLINE_CLIENT_ID));
+                    }
+                    if (!TextUtils.isEmpty(sharedPreferencesGet(Constants.LONG_TIME_ASR_ONLINE_CLIENT_SECRET))) {
+                        etClientSecret.setText(sharedPreferencesGet(Constants.LONG_TIME_ASR_ONLINE_CLIENT_SECRET));
                     }
                     break;
             }
@@ -83,10 +95,6 @@ public class AuthorizationActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String s) {
                 storageParameter();
-//                Intent mIntent = new Intent(AuthorizationActivity.this, TtsActivity.class);
-//                mIntent.putExtra("ClientId", etClientId.getText().toString().trim());
-//                mIntent.putExtra("ClientSecret", etClientSecret.getText().toString().trim());
-//                startActivity(mIntent);
             }
 
             @Override
@@ -108,18 +116,21 @@ public class AuthorizationActivity extends AppCompatActivity {
         Intent mIntent = new Intent();
         switch (type) {
             case "tts_online":
-                sharedPreferencesCommit(TTS_ONLINE_CLIENT_ID, clientId);
-                sharedPreferencesCommit(TTS_ONLINE_CLIENT_SECRET, clientSecret);
-                mIntent.setClass(AuthorizationActivity.this, TtsActivity.class);
+                sharedPreferencesCommit(Constants.TTS_ONLINE_CLIENT_ID, clientId);
+                sharedPreferencesCommit(Constants.TTS_ONLINE_CLIENT_SECRET, clientSecret);
+                mIntent.setClass(AuthorizationActivity.this, TtsSelectFunctionActivity.class);
                 break;
             case "asr_online":
-                sharedPreferencesCommit(ASR_ONLINE_CLIENT_ID, clientId);
-                sharedPreferencesCommit(ASR_ONLINE_CLIENT_SECRET, clientSecret);
-                mIntent.setClass(AuthorizationActivity.this, AsrActivity.class);
+                sharedPreferencesCommit(Constants.ASR_ONLINE_CLIENT_ID, clientId);
+                sharedPreferencesCommit(Constants.ASR_ONLINE_CLIENT_SECRET, clientSecret);
+                mIntent.setClass(AuthorizationActivity.this, AsrSelectFunctionActivity.class);
+                break;
+            case "long_time_asr_online":
+                sharedPreferencesCommit(Constants.LONG_TIME_ASR_ONLINE_CLIENT_ID, clientId);
+                sharedPreferencesCommit(Constants.LONG_TIME_ASR_ONLINE_CLIENT_SECRET, clientSecret);
+                mIntent.setClass(AuthorizationActivity.this, LongTimeActivity.class);
                 break;
         }
-        mIntent.putExtra("ClientId", etClientId.getText().toString().trim());
-        mIntent.putExtra("ClientSecret", etClientSecret.getText().toString().trim());
         startActivity(mIntent);
     }
 
@@ -130,12 +141,16 @@ public class AuthorizationActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(type)) return;
         switch (type) {
             case "tts_online":
-                sharedPreferencesRemove(TTS_ONLINE_CLIENT_ID);
-                sharedPreferencesRemove(TTS_ONLINE_CLIENT_SECRET);
+                sharedPreferencesRemove(Constants.TTS_ONLINE_CLIENT_ID);
+                sharedPreferencesRemove(Constants.TTS_ONLINE_CLIENT_SECRET);
                 break;
             case "asr_online":
-                sharedPreferencesRemove(ASR_ONLINE_CLIENT_ID);
-                sharedPreferencesRemove(ASR_ONLINE_CLIENT_SECRET);
+                sharedPreferencesRemove(Constants.ASR_ONLINE_CLIENT_ID);
+                sharedPreferencesRemove(Constants.ASR_ONLINE_CLIENT_SECRET);
+                break;
+            case "long_time_asr_online":
+                sharedPreferencesRemove(Constants.LONG_TIME_ASR_ONLINE_CLIENT_ID);
+                sharedPreferencesRemove(Constants.LONG_TIME_ASR_ONLINE_CLIENT_SECRET);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.74
 # min_api: 28
-# pg_map_id: 5daac92
+# pg_map_id: 46911cf
 # common_typos_disable
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
@@ -11338,26 +11338,27 @@ com.baker.sdk.longtime.asr.a.c -> b.a.a.a.a.a.c:
 com.baker.sdk.longtime.asr.a.c$1 -> b.a.a.a.a.a.c$a:
     com.baker.sdk.longtime.asr.a.c a -> b
 com.baker.sdk.longtime.asr.a.d -> b.a.a.a.a.a.d:
-    java.util.concurrent.atomic.AtomicInteger i -> e
-    java.lang.String d -> g
+    java.util.concurrent.atomic.AtomicInteger g -> e
+    java.lang.String c -> f
+    java.lang.String k -> i
     long m -> l
-    boolean k -> i
-    java.lang.StringBuilder f -> n
+    java.lang.StringBuilder o -> n
     java.lang.String l -> j
-    int e -> k
-    int j -> h
-    com.baker.sdk.longtime.asr.bean.LongTimeAsrParams h -> d
-    boolean c -> f
+    int d -> k
+    com.baker.sdk.longtime.asr.bean.LongTimeAsrParams f -> d
+    int i -> g
     okhttp3.WebSocketListener n -> m
-    com.baker.sdk.longtime.asr.bean.LongTimeAsrBaseParams g -> c
+    boolean j -> h
+    com.baker.sdk.longtime.asr.bean.LongTimeAsrBaseParams e -> c
     void a() -> b
     void b(java.lang.String,java.lang.String) -> c
 com.baker.sdk.longtime.asr.a.d$1 -> b.a.a.a.a.a.d$a:
 com.baker.sdk.longtime.asr.base.a -> b.a.a.a.a.b.a:
 com.baker.sdk.longtime.asr.base.b -> b.a.a.a.a.b.b:
-    android.media.AudioFocusRequest l -> h
+    android.media.AudioFocusRequest m -> h
     java.lang.String j -> k
     boolean i -> j
+    java.lang.String l -> m
     int h -> i
     boolean k -> l
     void a() -> b
@@ -11661,10 +11662,10 @@ com.biaobei.sdk.android.demo.longtime.LongTimeActivity -> com.biaobei.sdk.androi
     com.baker.sdk.longtime.asr.listener.LongTimeAsrCallBack callBack -> s
     26:83:void <init>() -> <init>
     26:26:android.widget.TextView access$000(com.biaobei.sdk.android.demo.longtime.LongTimeActivity) -> F
-    124:144:void requestPermissions() -> G
+    119:139:void requestPermissions() -> G
     64:77:void startRecord() -> H
     41:57:void onCreate(android.os.Bundle) -> onCreate
-    112:117:void onDestroy() -> onDestroy
+    107:112:void onDestroy() -> onDestroy
     60:61:void start(android.view.View) -> start
     80:81:void stop(android.view.View) -> stop
 com.biaobei.sdk.android.demo.longtime.LongTimeActivity$1 -> com.biaobei.sdk.android.demo.longtime.LongTimeActivity$a:
@@ -11677,7 +11678,6 @@ com.biaobei.sdk.android.demo.longtime.LongTimeActivity$2 -> com.biaobei.sdk.andr
     86:90:void onError(java.lang.String,java.lang.String) -> onError
     94:94:void onReady() -> onReady
     98:102:void onRecording(java.lang.String,boolean) -> onRecording
-    107:107:void onStop() -> onStop
 com.biaobei.sdk.android.demo.permission.PermissionFail -> b.b.a.a.a.b.a:
 com.biaobei.sdk.android.demo.permission.PermissionSuccess -> b.b.a.a.a.b.b:
 com.biaobei.sdk.android.demo.permission.PermissionUtil -> b.b.a.a.a.b.c:

@@ -39,5 +39,5 @@ dependencies {
     implementation 'com.databaker.synthesizer:synthesizer:2.2.+'
     implementation 'com.baker.speech.asr:bakerasr:1.2.+'
     implementation 'com.blankj:utilcodex:1.29.0'
-    implementation 'com.baker.sdk.longtime.asr:bakerlongtimeasr:1.0.+'
+    implementation 'com.baker.sdk.longtime.asr:bakerlongtimeasr:1.0.1'
 }

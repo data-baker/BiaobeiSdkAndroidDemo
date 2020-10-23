@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".asr.FileSpeechActivity">
+    <!--    start 。开发者提供字节流作为数据源。显示控件即可体验。-->
+    <Button
+        android:id="@+id/asr_send_pcm_buffer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:onClick="onClick"
+        android:text="通过字节流的方式作为数据源" />
+    <!--    end-->
 
     <Button
         android:id="@+id/asr_assets_pcm_file"

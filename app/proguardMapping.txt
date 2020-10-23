@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.74
 # min_api: 28
-# pg_map_id: 46911cf
+# pg_map_id: 6a85cb3
 # common_typos_disable
 android.support.v4.app.RemoteActionCompatParcelizer -> android.support.v4.app.RemoteActionCompatParcelizer:
     11:11:void <init>() -> <init>
@@ -11367,17 +11367,18 @@ com.baker.sdk.longtime.asr.base.b -> b.a.a.a.a.b.b:
 com.baker.sdk.longtime.asr.base.b$1 -> b.a.a.a.a.b.b$a:
 com.baker.sdk.longtime.asr.base.b$2 -> b.a.a.a.a.b.b$b:
 com.baker.speech.asr.a -> b.a.b.a.a:
-    boolean p -> m
-    com.baker.speech.asr.a b -> q
     boolean q -> n
     int o -> l
+    boolean r -> o
+    int p -> m
     int m -> j
     int n -> k
     int j -> h
-    android.telephony.PhoneStateListener r -> o
-    android.media.AudioManager$OnAudioFocusChangeListener s -> p
     int l -> i
+    android.telephony.PhoneStateListener s -> p
+    android.media.AudioManager$OnAudioFocusChangeListener t -> q
     int h -> g
+    com.baker.speech.asr.a b -> r
     com.baker.speech.asr.basic.BakerRecognizerCallback c -> b
     android.media.AudioManager d -> c
     android.media.AudioFocusRequest f -> e
@@ -11410,14 +11411,18 @@ com.baker.speech.asr.a.b$a -> b.a.b.a.a$e$a:
     android.media.AudioRecord a -> b
     java.io.InputStream b -> a
 com.baker.speech.asr.a.b$b -> b.a.b.a.a$e$b:
-    java.io.IOException e -> g
-    long f -> h
-    int d -> f
-    int c -> e
-    byte[] b -> d
+    java.util.concurrent.LinkedBlockingQueue j -> k
+    long f -> i
+    java.io.IOException e -> h
+    int c -> f
+    int d -> g
+    byte[] a -> d
+    com.baker.speech.asr.a.b$a i -> j
     boolean h -> b
-    byte[] a -> c
+    int k -> c
+    byte[] b -> e
     int a() -> D
+    void a(byte[]) -> E
 com.baker.speech.asr.a.c -> b.a.b.a.a$f:
     java.lang.Exception b -> h
     java.io.InputStream a -> c
@@ -11491,16 +11496,17 @@ com.baker.speech.asr.event.c$1 -> b.a.b.a.e.c$a:
     byte[] d -> e
 com.baker.speech.asr.event.d -> b.a.b.a.e.d:
     com.baker.speech.asr.event.b a -> h
-    java.util.concurrent.LinkedBlockingQueue f -> l
     com.baker.speech.asr.event.b b -> i
-    boolean m -> j
+    boolean n -> k
+    java.util.concurrent.ExecutorService g -> n
     int k -> f
-    java.util.concurrent.ExecutorService g -> m
     com.baker.speech.asr.a.c e -> b
     org.json.JSONObject l -> g
     com.baker.speech.asr.a.d d -> a
+    java.io.InputStream m -> j
     boolean j -> e
-    java.lang.Runnable c -> k
+    java.lang.Runnable c -> l
+    java.util.concurrent.LinkedBlockingQueue f -> m
     boolean h -> c
     boolean i -> d
     void a(java.lang.String,java.lang.String,byte[],int,int) -> b
@@ -11631,30 +11637,39 @@ com.biaobei.sdk.android.demo.asr.FileSpeechActivity -> com.biaobei.sdk.android.d
     android.widget.TextView resultTv -> q
     android.widget.TextView statusTv -> r
     com.baker.speech.asr.BakerRecognizer bakerRecognizer -> p
-    26:26:void <init>() -> <init>
-    26:26:android.widget.TextView access$000(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> F
-    26:26:android.widget.TextView access$100(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> G
-    121:133:void appendResult(java.lang.String) -> H
-    106:118:void appendStatus(java.lang.String) -> I
-    137:154:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    70:73:void onBeginOfSpeech() -> onBeginOfSpeech
-    89:103:void onClick(android.view.View) -> onClick
-    32:45:void onCreate(android.os.Bundle) -> onCreate
-    77:79:void onEndOfSpeech() -> onEndOfSpeech
-    83:85:void onError(com.baker.sdk.basecomponent.bean.BakerError) -> onError
-    49:53:void onReadyOfSpeech() -> onReadyOfSpeech
-    62:66:void onResult(java.util.List,java.util.List,boolean) -> onResult
-    58:58:void onVolumeChanged(float,byte[]) -> onVolumeChanged
+    boolean isSendPcmBuffer -> s
+    30:33:void <init>() -> <init>
+    30:30:boolean access$000(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> F
+    30:30:boolean access$002(com.biaobei.sdk.android.demo.asr.FileSpeechActivity,boolean) -> G
+    30:30:com.baker.speech.asr.BakerRecognizer access$100(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> H
+    30:30:android.widget.TextView access$200(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> I
+    30:30:android.widget.TextView access$300(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> J
+    157:169:void appendResult(java.lang.String) -> K
+    142:154:void appendStatus(java.lang.String) -> L
+    116:139:void sendPcmBuffer() -> M
+    173:190:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    75:78:void onBeginOfSpeech() -> onBeginOfSpeech
+    96:113:void onClick(android.view.View) -> onClick
+    37:50:void onCreate(android.os.Bundle) -> onCreate
+    82:85:void onEndOfSpeech() -> onEndOfSpeech
+    89:92:void onError(com.baker.sdk.basecomponent.bean.BakerError) -> onError
+    54:58:void onReadyOfSpeech() -> onReadyOfSpeech
+    67:71:void onResult(java.util.List,java.util.List,boolean) -> onResult
+    63:63:void onVolumeChanged(float,byte[]) -> onVolumeChanged
 com.biaobei.sdk.android.demo.asr.FileSpeechActivity$1 -> com.biaobei.sdk.android.demo.asr.FileSpeechActivity$a:
-    com.biaobei.sdk.android.demo.asr.FileSpeechActivity this$0 -> c
-    java.lang.String val$str -> b
-    106:106:void <init>(com.biaobei.sdk.android.demo.asr.FileSpeechActivity,java.lang.String) -> <init>
-    109:116:void run() -> run
+    com.biaobei.sdk.android.demo.asr.FileSpeechActivity this$0 -> b
+    116:116:void <init>(com.biaobei.sdk.android.demo.asr.FileSpeechActivity) -> <init>
+    120:137:void run() -> run
 com.biaobei.sdk.android.demo.asr.FileSpeechActivity$2 -> com.biaobei.sdk.android.demo.asr.FileSpeechActivity$b:
     com.biaobei.sdk.android.demo.asr.FileSpeechActivity this$0 -> c
     java.lang.String val$str -> b
-    121:121:void <init>(com.biaobei.sdk.android.demo.asr.FileSpeechActivity,java.lang.String) -> <init>
-    124:131:void run() -> run
+    142:142:void <init>(com.biaobei.sdk.android.demo.asr.FileSpeechActivity,java.lang.String) -> <init>
+    145:152:void run() -> run
+com.biaobei.sdk.android.demo.asr.FileSpeechActivity$3 -> com.biaobei.sdk.android.demo.asr.FileSpeechActivity$c:
+    com.biaobei.sdk.android.demo.asr.FileSpeechActivity this$0 -> c
+    java.lang.String val$str -> b
+    157:157:void <init>(com.biaobei.sdk.android.demo.asr.FileSpeechActivity,java.lang.String) -> <init>
+    160:167:void run() -> run
 com.biaobei.sdk.android.demo.longtime.LongTimeActivity -> com.biaobei.sdk.android.demo.longtime.LongTimeActivity:
     com.baker.sdk.longtime.asr.LongTimeAsr longTimeAsr -> q
     android.widget.TextView textView -> p

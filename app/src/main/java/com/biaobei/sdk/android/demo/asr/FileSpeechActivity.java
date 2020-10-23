@@ -21,11 +21,16 @@ import com.biaobei.sdk.android.demo.R;
 import com.blankj.utilcode.util.UriUtils;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
+/**
+ * 此页面支持两种方式作为sdk的识别输入源。分别是开发传入路径，字节流顺序的传给sdk。代码中有提现这两种方式
+ */
 public class FileSpeechActivity extends AppCompatActivity implements BakerRecognizerCallback, View.OnClickListener {
     private BakerRecognizer bakerRecognizer;
     private TextView resultTv, statusTv;
+    private boolean isSendPcmBuffer = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +79,14 @@ public class FileSpeechActivity extends AppCompatActivity implements BakerRecogn
 
     @Override
     public void onEndOfSpeech() {
+        isSendPcmBuffer = false;
         appendStatus("\n识别结束");
         HLogger.d("--onEndOfSpeech--");
     }
 
     @Override
     public void onError(BakerError error) {
+        isSendPcmBuffer = false;
         appendStatus("\n识别错误 : " + error.getCode() + ", " + error.getMessage());
         HLogger.d("code=" + error.getCode() + ", message=" + error.getMessage() + ",trace_id=" + error.getTrace_id());
     }
@@ -87,7 +94,11 @@ public class FileSpeechActivity extends AppCompatActivity implements BakerRecogn
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.asr_assets_pcm_file) {
+        if (id == R.id.asr_send_pcm_buffer) {
+            //TODO 请注意使用字节流的方式识别调用此开始方法
+            bakerRecognizer.startRecognizeWithByte();
+            sendPcmBuffer();
+        } else if (id == R.id.asr_assets_pcm_file) {
             bakerRecognizer.startRecognize("asset://yinpin.pcm");
         } else if (id == R.id.stopRecognize) {
             bakerRecognizer.stopRecognition();
@@ -100,6 +111,41 @@ public class FileSpeechActivity extends AppCompatActivity implements BakerRecogn
             intent.setType("*/*");
             startActivityForResult(intent, 333);
         }
+    }
+
+    private void sendPcmBuffer() {
+        /**
+         * 当BakerRecognizer.startRecognizeWithByte()方法开启识别后
+         * 通过bakerRecognizer.sendPcmBuffer(buffer)依次发送数据给SDK
+         * buffer的大小务必固定1024(最后一包除外)
+         * 传递完数据后可以自行
+         * 调用 BakerRecognizer.stopRecognition()结束识别或者当识别过程中静音段超时会
+         * 自动结束识别。
+         * sendPcmBuffer()返回结果说明，0=正常，1=buffer是空，2=buffer超过1024
+         */
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    isSendPcmBuffer = true;
+                    InputStream inputStream = getAssets().open("yinpin.pcm");
+                    int len;
+                    byte[] buffer = new byte[1024];
+                    while ((len = inputStream.read(buffer, 0, buffer.length)) != -1 && (isSendPcmBuffer)) {
+                        HLogger.d("读取音频流:" + buffer.length);
+                        int result = bakerRecognizer.sendPcmBuffer(buffer);
+                        if (result != 0) {
+                            //返回值不等于0发送数据异常，调用关闭识别的方法
+                            bakerRecognizer.stopRecognition();
+                        }
+                    }
+                    bakerRecognizer.stopRecognition();
+                    isSendPcmBuffer = false;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
     }
 
     private void appendStatus(final String str) {

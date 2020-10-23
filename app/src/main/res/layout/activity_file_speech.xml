@@ -12,7 +12,8 @@
         android:layout_height="60dp"
         android:layout_margin="10dp"
         android:onClick="onClick"
-        android:text="通过字节流的方式作为数据源" />
+        android:text="通过字节流的方式作为数据源"
+        android:visibility="gone" />
     <!--    end-->
 
     <Button

@@ -18,13 +18,14 @@ import com.databaker.synthesizer.BakerSynthesizer;
 public class AudioTrackPlayerActivity extends AppCompatActivity {
     private BakerSynthesizer bakerSynthesizer;
     private static AudioTrackPlayer audioTrackPlayer;
-    private EditText editText;
+    private EditText editText, edtVoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_track_player);
 
+        edtVoice = findViewById(R.id.edit_voice);
         editText = findViewById(R.id.edit_content);
 
         String clientId = getSharedPreferences(Constants.SP_TABLE_NAME, Context.MODE_PRIVATE).getString(Constants.TTS_ONLINE_CLIENT_ID, "");//需要连续标贝申请
@@ -99,7 +100,7 @@ public class AudioTrackPlayerActivity extends AppCompatActivity {
         bakerSynthesizer.setBakerCallback(bakerCallback);
         /**********************以下是选填参数**************************/
         //设置发音人声音名称，默认：标准合成_模仿儿童_果子
-        bakerSynthesizer.setVoice("Guozi");
+        bakerSynthesizer.setVoice(edtVoice.getText().toString().trim());
         //合成请求文本的语言，目前支持ZH(中文和中英混)和ENG(纯英文，中文部分不会合成),默认：ZH
         bakerSynthesizer.setLanguage(BakerBaseConstants.LANGUAGE_ZH);
         //设置播放的语速，在0～9之间（支持浮点值），不传时默认为5

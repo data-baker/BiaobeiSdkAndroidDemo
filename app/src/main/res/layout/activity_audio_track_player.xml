@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tip_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="文本内容："
@@ -13,17 +14,40 @@
     <EditText
         android:id="@+id/edit_content"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="140dp"
         android:maxLength="230"
         android:text="您好，我是标贝科技为您打造的银行专属理财顾问。我可以为您解答银行业务方面的问题，包括存款、外汇、债券、基金、理财、保险等各种业务，并根据您的具体情况和需求，为您量身打造专属的财务增值服务。"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_below="@id/tip_1"/>
+
+    <LinearLayout
+        android:id="@+id/ll_voice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="声音名称："
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edit_voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guozi"
+            android:hint="请填写体验的声音拼音名"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_content">
+        android:layout_below="@id/ll_voice">
 
         <Button
             android:layout_width="match_parent"

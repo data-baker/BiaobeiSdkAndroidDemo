@@ -20,14 +20,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar","*.aar"])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     testImplementation 'junit:junit:4.12'
@@ -40,5 +40,7 @@ dependencies {
 
     implementation 'com.databaker.synthesizer:synthesizer:2.2.+'
     implementation 'com.baker.speech.asr:bakerasr:1.2.3'
-    implementation 'com.baker.sdk.longtime.asr:bakerlongtimeasr:1.0.1'
+//    api 'com.baker.sdk.basecomponent:bakerbasecomponent:1.0.2'
+//    api 'com.baker.sdk.http:bakerhttp:1.0.0'
+    implementation 'com.baker.sdk.longtime.asr:bakerlongtimeasr:1.0.4'
 }

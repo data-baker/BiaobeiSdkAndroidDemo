@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.0.74
-# min_api: 28
-# pg_map_id: e3c59a0
+# min_api: 29
+# pg_map_id: 1eb0760
 # common_typos_disable
 a.a.a.a -> a.a.a.a:
     a.a.a.b a -> b
@@ -3017,11 +3017,11 @@ androidx.appcompat.widget.AppCompatSpinner$DropDownAdapter -> androidx.appcompat
     760:763:void registerDataSetObserver(android.database.DataSetObserver) -> registerDataSetObserver
     767:770:void unregisterDataSetObserver(android.database.DataSetObserver) -> unregisterDataSetObserver
 androidx.appcompat.widget.AppCompatSpinner$DropdownPopup -> androidx.appcompat.widget.AppCompatSpinner$e:
-    int mOriginalHorizontalOffset -> I
-    androidx.appcompat.widget.AppCompatSpinner this$0 -> J
-    android.graphics.Rect mVisibleRect -> H
-    java.lang.CharSequence mHintText -> F
-    android.widget.ListAdapter mAdapter -> G
+    android.widget.ListAdapter mAdapter -> E
+    java.lang.CharSequence mHintText -> D
+    int mOriginalHorizontalOffset -> G
+    androidx.appcompat.widget.AppCompatSpinner this$0 -> H
+    android.graphics.Rect mVisibleRect -> F
     968:986:void <init>(androidx.appcompat.widget.AppCompatSpinner,android.content.Context,android.util.AttributeSet,int) -> <init>
     962:962:void access$001(androidx.appcompat.widget.AppCompatSpinner$DropdownPopup) -> N
     1006:1041:void computeContentWidth() -> O
@@ -3286,7 +3286,7 @@ androidx.appcompat.widget.DrawableUtils -> b.b.p.p:
     45:64:void <clinit>() -> <clinit>
     142:176:boolean canSafelyMutateDrawable(android.graphics.drawable.Drawable) -> a
     131:135:void fixDrawable(android.graphics.drawable.Drawable) -> b
-    73:122:android.graphics.Rect getOpticalBounds(android.graphics.drawable.Drawable) -> c
+    73:80:android.graphics.Rect getOpticalBounds(android.graphics.drawable.Drawable) -> c
     200:201:android.graphics.PorterDuff$Mode parseTintMode(int,android.graphics.PorterDuff$Mode) -> d
 androidx.appcompat.widget.DropDownListView -> b.b.p.q:
     boolean mListSelectionHidden -> j
@@ -3476,7 +3476,6 @@ androidx.appcompat.widget.ListPopupWindow -> androidx.appcompat.widget.ListPopup
     android.os.Handler mHandler -> y
     android.widget.AdapterView$OnItemClickListener mItemClickListener -> t
     android.widget.PopupWindow mPopup -> C
-    java.lang.reflect.Method sSetClipToWindowEnabledMethod -> D
     androidx.appcompat.widget.ListPopupWindow$PopupTouchInterceptor mTouchInterceptor -> v
     int mPromptPosition -> q
     boolean mDropDownAlwaysVisible -> n
@@ -3491,11 +3490,9 @@ androidx.appcompat.widget.ListPopupWindow -> androidx.appcompat.widget.ListPopup
     android.graphics.Rect mEpicenterBounds -> A
     android.database.DataSetObserver mObserver -> r
     android.widget.ListAdapter mAdapter -> c
-    java.lang.reflect.Method sSetEpicenterBoundsMethod -> E
     androidx.appcompat.widget.ListPopupWindow$ResizePopupRunnable mResizePopupRunnable -> u
     boolean mModal -> B
     int mListItemExpandMaximum -> p
-    84:109:void <clinit>() -> <clinit>
     224:225:void <init>(android.content.Context) -> <init>
     235:236:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     248:249:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -3569,9 +3566,7 @@ androidx.appcompat.widget.MenuItemHoverListener -> b.b.p.t:
     void onItemHoverEnter(androidx.appcompat.view.menu.MenuBuilder,android.view.MenuItem) -> e
     void onItemHoverExit(androidx.appcompat.view.menu.MenuBuilder,android.view.MenuItem) -> h
 androidx.appcompat.widget.MenuPopupWindow -> b.b.p.u:
-    java.lang.reflect.Method sSetTouchModalMethod -> G
-    androidx.appcompat.widget.MenuItemHoverListener mHoverListener -> F
-    61:68:void <clinit>() -> <clinit>
+    androidx.appcompat.widget.MenuItemHoverListener mHoverListener -> D
     74:75:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
     86:89:void setEnterTransition(java.lang.Object) -> N
     92:95:void setExitTransition(java.lang.Object) -> O
@@ -3900,14 +3895,6 @@ androidx.appcompat.widget.SearchView$OnSuggestionListener -> androidx.appcompat.
     boolean onSuggestionSelect(int) -> a
     boolean onSuggestionClick(int) -> b
 androidx.appcompat.widget.SearchView$PreQAutoCompleteTextViewReflector -> androidx.appcompat.widget.SearchView$n:
-    java.lang.reflect.Method mEnsureImeVisible -> c
-    java.lang.reflect.Method mDoBeforeTextChanged -> a
-    java.lang.reflect.Method mDoAfterTextChanged -> b
-    2049:2072:void <init>() -> <init>
-    2085:2092:void doAfterTextChanged(android.widget.AutoCompleteTextView) -> a
-    2075:2082:void doBeforeTextChanged(android.widget.AutoCompleteTextView) -> b
-    2095:2102:void ensureImeVisible(android.widget.AutoCompleteTextView) -> c
-    2105:2106:void preApi29Check() -> d
 androidx.appcompat.widget.SearchView$SavedState -> androidx.appcompat.widget.SearchView$o:
     boolean isIconified -> d
     1330:1330:void <clinit>() -> <clinit>
@@ -7965,12 +7952,11 @@ androidx.core.content.res.FontResourcesParserCompat$FontFileResourceEntry -> b.f
     boolean mItalic -> c
     java.lang.String mVariationSettings -> d
     113:120:void <init>(java.lang.String,int,boolean,java.lang.String,int,int) -> <init>
-    123:123:java.lang.String getFileName() -> a
-    143:143:int getResourceId() -> b
-    139:139:int getTtcIndex() -> c
-    135:135:java.lang.String getVariationSettings() -> d
-    127:127:int getWeight() -> e
-    131:131:boolean isItalic() -> f
+    143:143:int getResourceId() -> a
+    139:139:int getTtcIndex() -> b
+    135:135:java.lang.String getVariationSettings() -> c
+    127:127:int getWeight() -> d
+    131:131:boolean isItalic() -> e
 androidx.core.content.res.FontResourcesParserCompat$ProviderResourceEntry -> b.f.d.e.a$d:
     androidx.core.provider.FontRequest mRequest -> a
     int mTimeoutMs -> b
@@ -8001,13 +7987,7 @@ androidx.core.content.res.ResourcesCompat$FontCallback$2 -> b.f.d.e.b$a$b:
     303:304:void run() -> run
 androidx.core.content.res.ResourcesCompat$ThemeCompat -> b.f.d.e.b$b:
     474:479:void rebase(android.content.res.Resources$Theme) -> a
-androidx.core.content.res.ResourcesCompat$ThemeCompat$ImplApi23 -> b.f.d.e.b$b$a:
-    java.lang.Object sRebaseMethodLock -> a
-    boolean sRebaseMethodFetched -> c
-    java.lang.reflect.Method sRebaseMethod -> b
-    492:492:void <clinit>() -> <clinit>
-    498:516:void rebase(android.content.res.Resources$Theme) -> a
-androidx.core.content.res.ResourcesCompat$ThemeCompat$ImplApi29 -> b.f.d.e.b$b$b:
+androidx.core.content.res.ResourcesCompat$ThemeCompat$ImplApi29 -> b.f.d.e.b$b$a:
     485:486:void rebase(android.content.res.Resources$Theme) -> a
 androidx.core.graphics.ColorUtils -> b.f.e.a:
     45:45:void <clinit>() -> <clinit>
@@ -8038,79 +8018,18 @@ androidx.core.graphics.TypefaceCompat -> b.f.e.c:
     147:153:android.graphics.Typeface createFromResourcesFontFile(android.content.Context,android.content.res.Resources,int,java.lang.String,int) -> d
     92:92:java.lang.String createResourceUid(android.content.res.Resources,int,int) -> e
     80:80:android.graphics.Typeface findFromCache(android.content.res.Resources,int,int) -> f
-androidx.core.graphics.TypefaceCompatApi21Impl -> b.f.e.d:
-    java.lang.reflect.Method sAddFontWeightStyle -> d
-    boolean sHasInitBeenCalled -> f
-    java.lang.reflect.Constructor sFontFamilyCtor -> c
-    java.lang.reflect.Method sCreateFromFamiliesWithDefault -> e
-    java.lang.Class sFontFamily -> b
-    65:65:void <clinit>() -> <clinit>
-    54:54:void <init>() -> <init>
-    176:199:android.graphics.Typeface createFromFontFamilyFilesResourceEntry(android.content.Context,androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry,android.content.res.Resources,int) -> a
-    136:142:boolean addFontWeightStyle(java.lang.Object,java.lang.String,int,boolean) -> f
-    123:130:android.graphics.Typeface createFromFamiliesWithDefault(java.lang.Object) -> g
-    68:97:void init() -> h
-    114:118:java.lang.Object newFamily() -> i
-androidx.core.graphics.TypefaceCompatApi26Impl -> b.f.e.e:
-    java.lang.reflect.Method mFreeze -> k
-    java.lang.reflect.Method mAbortCreation -> l
-    java.lang.reflect.Method mCreateFromFamiliesWithDefault -> m
-    java.lang.Class mFontFamily -> g
-    java.lang.reflect.Constructor mFontFamilyCtor -> h
-    java.lang.reflect.Method mAddFontFromAssetManager -> i
-    java.lang.reflect.Method mAddFontFromBuffer -> j
-    74:108:void <init>() -> <init>
-    203:221:android.graphics.Typeface createFromFontFamilyFilesResourceEntry(android.content.Context,androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry,android.content.res.Resources,int) -> a
-    229:281:android.graphics.Typeface createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int) -> b
-    291:307:android.graphics.Typeface createFromResourcesFontFile(android.content.Context,android.content.res.Resources,int,java.lang.String,int) -> c
-    android.graphics.Typeface createFromFamiliesWithDefault(java.lang.Object) -> g
-    127:129:java.lang.Object newFamily() -> i
-    194:196:void abortCreation(java.lang.Object) -> j
-    140:144:boolean addFontFromAssetManager(android.content.Context,java.lang.Object,java.lang.String,int,int,int,android.graphics.fonts.FontVariationAxis[]) -> k
-    155:158:boolean addFontFromBuffer(java.lang.Object,java.nio.ByteBuffer,int,int,int) -> l
-    183:185:boolean freeze(java.lang.Object) -> m
-    114:118:boolean isFontFamilyPrivateAPIAvailable() -> n
-    343:343:java.lang.reflect.Method obtainAbortCreationMethod(java.lang.Class) -> o
-    326:326:java.lang.reflect.Method obtainAddFontFromAssetManagerMethod(java.lang.Class) -> p
-    333:333:java.lang.reflect.Method obtainAddFontFromBufferMethod(java.lang.Class) -> q
-    java.lang.reflect.Method obtainCreateFromFamiliesWithDefaultMethod(java.lang.Class) -> r
-    316:316:java.lang.Class obtainFontFamily() -> s
-    321:321:java.lang.reflect.Constructor obtainFontFamilyCtor(java.lang.Class) -> t
-    339:339:java.lang.reflect.Method obtainFreezeMethod(java.lang.Class) -> u
-androidx.core.graphics.TypefaceCompatApi28Impl -> b.f.e.f:
-    36:36:void <init>() -> <init>
-    49:54:android.graphics.Typeface createFromFamiliesWithDefault(java.lang.Object) -> g
-    61:65:java.lang.reflect.Method obtainCreateFromFamiliesWithDefaultMethod(java.lang.Class) -> r
-androidx.core.graphics.TypefaceCompatApi29Impl -> b.f.e.g:
+androidx.core.graphics.TypefaceCompatApi29Impl -> b.f.e.d:
     44:44:void <init>() -> <init>
     104:132:android.graphics.Typeface createFromFontFamilyFilesResourceEntry(android.content.Context,androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry,android.content.res.Resources,int) -> a
     62:94:android.graphics.Typeface createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int) -> b
     144:150:android.graphics.Typeface createFromResourcesFontFile(android.content.Context,android.content.res.Resources,int,java.lang.String,int) -> c
-    48:48:androidx.core.provider.FontsContractCompat$FontInfo findBestInfo(androidx.core.provider.FontsContractCompat$FontInfo[],int) -> e
-androidx.core.graphics.TypefaceCompatBaseImpl -> b.f.e.h:
+androidx.core.graphics.TypefaceCompatBaseImpl -> b.f.e.e:
     java.util.concurrent.ConcurrentHashMap mFontFamilies -> a
     45:52:void <init>() -> <init>
     android.graphics.Typeface createFromFontFamilyFilesResourceEntry(android.content.Context,androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry,android.content.res.Resources,int) -> a
     android.graphics.Typeface createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int) -> b
-    187:200:android.graphics.Typeface createFromResourcesFontFile(android.content.Context,android.content.res.Resources,int,java.lang.String,int) -> c
-    61:76:java.lang.Object findBestFont(java.lang.Object[],int,androidx.core.graphics.TypefaceCompatBaseImpl$StyleExtractor) -> d
-    99:99:androidx.core.provider.FontsContractCompat$FontInfo findBestInfo(androidx.core.provider.FontsContractCompat$FontInfo[],int) -> e
-androidx.core.graphics.TypefaceCompatBaseImpl$1 -> b.f.e.h$a:
-    99:99:void <init>(androidx.core.graphics.TypefaceCompatBaseImpl) -> <init>
-    99:99:int getWeight(java.lang.Object) -> a
-    99:99:boolean isItalic(java.lang.Object) -> b
-    102:102:int getWeight(androidx.core.provider.FontsContractCompat$FontInfo) -> c
-    107:107:boolean isItalic(androidx.core.provider.FontsContractCompat$FontInfo) -> d
-androidx.core.graphics.TypefaceCompatBaseImpl$StyleExtractor -> b.f.e.h$b:
-    int getWeight(java.lang.Object) -> a
-    boolean isItalic(java.lang.Object) -> b
-androidx.core.graphics.TypefaceCompatUtil -> b.f.e.i:
-    175:181:void closeQuietly(java.io.Closeable) -> a
-    165:171:boolean copyToFile(java.io.File,android.content.res.Resources,int) -> b
-    142:158:boolean copyToFile(java.io.File,java.io.InputStream) -> c
-    63:79:java.io.File getTempFile(android.content.Context) -> d
-    103:114:java.nio.ByteBuffer mmap(android.content.Context,android.os.CancellationSignal,android.net.Uri) -> e
-androidx.core.graphics.drawable.DrawableCompat -> b.f.e.j.a:
+    android.graphics.Typeface createFromResourcesFontFile(android.content.Context,android.content.res.Resources,int,java.lang.String,int) -> c
+androidx.core.graphics.drawable.DrawableCompat -> b.f.e.f.a:
     391:392:int getLayoutDirection(android.graphics.drawable.Drawable) -> a
     95:96:boolean isAutoMirrored(android.graphics.drawable.Drawable) -> b
     78:81:void setAutoMirrored(android.graphics.drawable.Drawable,boolean) -> c
@@ -8120,8 +8039,7 @@ androidx.core.graphics.drawable.DrawableCompat -> b.f.e.j.a:
     135:140:void setTint(android.graphics.drawable.Drawable,int) -> g
     149:154:void setTintList(android.graphics.drawable.Drawable,android.content.res.ColorStateList) -> h
     163:168:void setTintMode(android.graphics.drawable.Drawable,android.graphics.PorterDuff$Mode) -> i
-    334:337:android.graphics.drawable.Drawable unwrap(android.graphics.drawable.Drawable) -> j
-    307:308:android.graphics.drawable.Drawable wrap(android.graphics.drawable.Drawable) -> k
+    307:308:android.graphics.drawable.Drawable wrap(android.graphics.drawable.Drawable) -> j
 androidx.core.graphics.drawable.IconCompat -> androidx.core.graphics.drawable.IconCompat:
     android.graphics.PorterDuff$Mode DEFAULT_TINT_MODE -> j
     java.lang.String mTintModeStr -> i
@@ -8147,7 +8065,7 @@ androidx.core.graphics.drawable.IconCompatParcelizer -> androidx.core.graphics.d
     11:11:void <init>() -> <init>
     14:23:androidx.core.graphics.drawable.IconCompat read(androidx.versionedparcelable.VersionedParcel) -> read
     28:51:void write(androidx.core.graphics.drawable.IconCompat,androidx.versionedparcelable.VersionedParcel) -> write
-androidx.core.graphics.drawable.WrappedDrawable -> b.f.e.j.b:
+androidx.core.graphics.drawable.WrappedDrawable -> b.f.e.f.b:
     android.graphics.drawable.Drawable getWrappedDrawable() -> a
     void setWrappedDrawable(android.graphics.drawable.Drawable) -> b
 androidx.core.internal.view.SupportMenu -> b.f.f.a.a:
@@ -8196,7 +8114,6 @@ androidx.core.provider.FontsContractCompat -> b.f.h.b:
     184:186:androidx.core.provider.FontsContractCompat$TypefaceResult getFontInternal(android.content.Context,androidx.core.provider.FontRequest,int) -> f
     232:302:android.graphics.Typeface getFontSync(android.content.Context,androidx.core.provider.FontRequest,androidx.core.content.res.ResourcesCompat$FontCallback,android.os.Handler,boolean,int,int) -> g
     744:747:android.content.pm.ProviderInfo getProvider(android.content.pm.PackageManager,androidx.core.provider.FontRequest,android.content.res.Resources) -> h
-    689:704:java.util.Map prepareFontData(android.content.Context,androidx.core.provider.FontsContractCompat$FontInfo[],android.os.CancellationSignal) -> i
 androidx.core.provider.FontsContractCompat$1 -> b.f.h.b$a:
     android.content.Context val$context -> a
     androidx.core.provider.FontRequest val$request -> b
@@ -8233,11 +8150,10 @@ androidx.core.provider.FontsContractCompat$FontInfo -> b.f.h.b$f:
     android.net.Uri mUri -> a
     boolean mItalic -> d
     346:352:void <init>(android.net.Uri,int,int,boolean,int) -> <init>
-    388:388:int getResultCode() -> a
-    365:365:int getTtcIndex() -> b
-    358:358:android.net.Uri getUri() -> c
-    372:372:int getWeight() -> d
-    379:379:boolean isItalic() -> e
+    365:365:int getTtcIndex() -> a
+    358:358:android.net.Uri getUri() -> b
+    372:372:int getWeight() -> c
+    379:379:boolean isItalic() -> d
 androidx.core.provider.FontsContractCompat$TypefaceResult -> b.f.h.b$g:
     android.graphics.Typeface mTypeface -> a
     int mResult -> b
@@ -8284,13 +8200,12 @@ androidx.core.provider.SelfDestructiveThread$ReplyCallback -> b.f.h.c$d:
     void onReply(java.lang.Object) -> a
 androidx.core.text.PrecomputedTextCompat -> b.f.i.a:
     73:74:void <clinit>() -> <clinit>
-    523:523:androidx.core.text.PrecomputedTextCompat$Params getParams() -> a
-    512:515:android.text.PrecomputedText getPrecomputedText() -> b
+    512:515:android.text.PrecomputedText getPrecomputedText() -> a
     754:754:char charAt(int) -> charAt
     729:729:int getSpanEnd(java.lang.Object) -> getSpanEnd
     734:734:int getSpanFlags(java.lang.Object) -> getSpanFlags
     724:724:int getSpanStart(java.lang.Object) -> getSpanStart
-    714:717:java.lang.Object[] getSpans(int,int,java.lang.Class) -> getSpans
+    714:715:java.lang.Object[] getSpans(int,int,java.lang.Class) -> getSpans
     749:749:int length() -> length
     739:739:int nextSpanTransition(int,int,java.lang.Class) -> nextSpanTransition
     695:696:void removeSpan(java.lang.Object) -> removeSpan
@@ -8459,55 +8374,53 @@ androidx.core.view.OneShotPreDrawListener -> b.f.k.m:
     90:91:void onViewAttachedToWindow(android.view.View) -> onViewAttachedToWindow
     95:96:void onViewDetachedFromWindow(android.view.View) -> onViewDetachedFromWindow
 androidx.core.view.ViewCompat -> b.f.k.n:
-    java.lang.reflect.Field sAccessibilityDelegateField -> b
     java.util.WeakHashMap sViewPropertyAnimatorMap -> a
-    boolean sAccessibilityDelegateCheckFailed -> c
+    boolean sAccessibilityDelegateCheckFailed -> b
     461:4171:void <clinit>() -> <clinit>
-    3295:3323:void offsetTopAndBottom(android.view.View,int) -> A
-    2496:2506:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat) -> B
-    3999:3999:androidx.core.view.ViewCompat$AccessibilityViewProperty paneTitleProperty() -> C
-    1007:1012:void postInvalidateOnAnimation(android.view.View) -> D
-    1047:1052:void postOnAnimation(android.view.View,java.lang.Runnable) -> E
-    1069:1074:void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long) -> F
-    2379:2384:void requestApplyInsets(android.view.View) -> G
-    513:517:void saveAttributeDataForStyleable(android.view.View,android.content.Context,int[],android.util.AttributeSet,android.content.res.TypedArray,int,int) -> H
-    3927:3927:androidx.core.view.ViewCompat$AccessibilityViewProperty screenReaderFocusableProperty() -> I
-    714:719:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat) -> J
-    2678:2683:void setBackground(android.view.View,android.graphics.drawable.Drawable) -> K
-    2708:2727:void setBackgroundTintList(android.view.View,android.content.res.ColorStateList) -> L
-    2755:2774:void setBackgroundTintMode(android.view.View,android.graphics.PorterDuff$Mode) -> M
-    2287:2290:void setElevation(android.view.View,float) -> N
-    1118:1130:void setImportantForAccessibility(android.view.View,int) -> O
-    2463:2479:void setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener) -> P
-    3492:3495:void setScrollIndicators(android.view.View,int,int) -> Q
-    2333:2341:void setTransitionName(android.view.View,java.lang.String) -> R
-    2857:2862:void stopNestedScroll(android.view.View) -> S
+    2496:2506:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat) -> A
+    3999:3999:androidx.core.view.ViewCompat$AccessibilityViewProperty paneTitleProperty() -> B
+    1007:1012:void postInvalidateOnAnimation(android.view.View) -> C
+    1047:1052:void postOnAnimation(android.view.View,java.lang.Runnable) -> D
+    1069:1074:void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long) -> E
+    2379:2384:void requestApplyInsets(android.view.View) -> F
+    513:517:void saveAttributeDataForStyleable(android.view.View,android.content.Context,int[],android.util.AttributeSet,android.content.res.TypedArray,int,int) -> G
+    3927:3927:androidx.core.view.ViewCompat$AccessibilityViewProperty screenReaderFocusableProperty() -> H
+    714:719:void setAccessibilityDelegate(android.view.View,androidx.core.view.AccessibilityDelegateCompat) -> I
+    2678:2683:void setBackground(android.view.View,android.graphics.drawable.Drawable) -> J
+    2708:2727:void setBackgroundTintList(android.view.View,android.content.res.ColorStateList) -> K
+    2755:2774:void setBackgroundTintMode(android.view.View,android.graphics.PorterDuff$Mode) -> L
+    2287:2290:void setElevation(android.view.View,float) -> M
+    1118:1130:void setImportantForAccessibility(android.view.View,int) -> N
+    2463:2479:void setOnApplyWindowInsetsListener(android.view.View,androidx.core.view.OnApplyWindowInsetsListener) -> O
+    3492:3495:void setScrollIndicators(android.view.View,int,int) -> P
+    2333:2341:void setTransitionName(android.view.View,java.lang.String) -> Q
+    2857:2862:void stopNestedScroll(android.view.View) -> R
     4056:4056:androidx.core.view.ViewCompat$AccessibilityViewProperty accessibilityHeadingProperty() -> a
     2014:2022:androidx.core.view.ViewPropertyAnimatorCompat animate(android.view.View) -> b
     2601:2602:androidx.core.view.WindowInsetsCompat computeSystemWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat,android.graphics.Rect) -> c
     2524:2534:androidx.core.view.WindowInsetsCompat dispatchApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat) -> d
     3871:3872:boolean dispatchUnhandledKeyEventBeforeHierarchy(android.view.View,android.view.KeyEvent) -> e
-    935:938:android.view.View$AccessibilityDelegate getAccessibilityDelegateInternal(android.view.View) -> f
-    944:965:android.view.View$AccessibilityDelegate getAccessibilityDelegateThroughReflection(android.view.View) -> g
-    1735:1736:int getAccessibilityLiveRegion(android.view.View) -> h
-    3995:3995:java.lang.CharSequence getAccessibilityPaneTitle(android.view.View) -> i
-    2692:2693:android.content.res.ColorStateList getBackgroundTintList(android.view.View) -> j
-    2737:2738:android.graphics.PorterDuff$Mode getBackgroundTintMode(android.view.View) -> k
-    2298:2299:float getElevation(android.view.View) -> l
-    2424:2425:boolean getFitsSystemWindows(android.view.View) -> m
-    1091:1092:int getImportantForAccessibility(android.view.View) -> n
-    1557:1558:int getLayoutDirection(android.view.View) -> o
-    1980:1981:int getMinimumHeight(android.view.View) -> p
-    2581:2582:androidx.core.view.WindowInsetsCompat getRootWindowInsets(android.view.View) -> q
-    2355:2356:java.lang.String getTransitionName(android.view.View) -> r
-    2368:2369:int getWindowSystemUiVisibility(android.view.View) -> s
-    3440:3441:boolean hasOnClickListeners(android.view.View) -> t
-    4035:4036:boolean isAccessibilityHeading(android.view.View) -> u
-    3428:3429:boolean isAttachedToWindow(android.view.View) -> v
-    3234:3235:boolean isLaidOut(android.view.View) -> w
-    3922:3923:boolean isScreenReaderFocusable(android.view.View) -> x
-    4146:4169:void notifyViewAccessibilityStateChangedIfNeeded(android.view.View,int) -> y
-    3343:3371:void offsetLeftAndRight(android.view.View,int) -> z
+    935:936:android.view.View$AccessibilityDelegate getAccessibilityDelegateInternal(android.view.View) -> f
+    1735:1736:int getAccessibilityLiveRegion(android.view.View) -> g
+    3995:3995:java.lang.CharSequence getAccessibilityPaneTitle(android.view.View) -> h
+    2692:2693:android.content.res.ColorStateList getBackgroundTintList(android.view.View) -> i
+    2737:2738:android.graphics.PorterDuff$Mode getBackgroundTintMode(android.view.View) -> j
+    2298:2299:float getElevation(android.view.View) -> k
+    2424:2425:boolean getFitsSystemWindows(android.view.View) -> l
+    1091:1092:int getImportantForAccessibility(android.view.View) -> m
+    1557:1558:int getLayoutDirection(android.view.View) -> n
+    1980:1981:int getMinimumHeight(android.view.View) -> o
+    2581:2582:androidx.core.view.WindowInsetsCompat getRootWindowInsets(android.view.View) -> p
+    2355:2356:java.lang.String getTransitionName(android.view.View) -> q
+    2368:2369:int getWindowSystemUiVisibility(android.view.View) -> r
+    3440:3441:boolean hasOnClickListeners(android.view.View) -> s
+    4035:4036:boolean isAccessibilityHeading(android.view.View) -> t
+    3428:3429:boolean isAttachedToWindow(android.view.View) -> u
+    3234:3235:boolean isLaidOut(android.view.View) -> v
+    3922:3923:boolean isScreenReaderFocusable(android.view.View) -> w
+    4146:4169:void notifyViewAccessibilityStateChangedIfNeeded(android.view.View,int) -> x
+    3343:3371:void offsetLeftAndRight(android.view.View,int) -> y
+    3295:3323:void offsetTopAndBottom(android.view.View,int) -> z
 androidx.core.view.ViewCompat$1 -> b.f.k.n$a:
     androidx.core.view.OnApplyWindowInsetsListener val$listener -> a
     2469:2469:void <init>(androidx.core.view.OnApplyWindowInsetsListener) -> <init>
@@ -8627,33 +8540,21 @@ androidx.core.view.WindowInsetsCompat$Builder -> b.f.k.v$a:
     996:996:androidx.core.view.WindowInsetsCompat build() -> a
     970:971:androidx.core.view.WindowInsetsCompat$Builder setStableInsets(androidx.core.graphics.Insets) -> b
     893:894:androidx.core.view.WindowInsetsCompat$Builder setSystemWindowInsets(androidx.core.graphics.Insets) -> c
-androidx.core.view.WindowInsetsCompat$BuilderImpl -> b.f.k.v$d:
+androidx.core.view.WindowInsetsCompat$BuilderImpl -> b.f.k.v$c:
     androidx.core.view.WindowInsetsCompat mInsets -> a
     1004:1005:void <init>() -> <init>
     1007:1009:void <init>(androidx.core.view.WindowInsetsCompat) -> <init>
     androidx.core.view.WindowInsetsCompat build() -> a
-    1019:1019:void setStableInsets(androidx.core.graphics.Insets) -> b
+    void setStableInsets(androidx.core.graphics.Insets) -> b
     void setSystemWindowInsets(androidx.core.graphics.Insets) -> c
-androidx.core.view.WindowInsetsCompat$BuilderImpl20 -> b.f.k.v$b:
-    java.lang.reflect.Constructor sConstructor -> e
-    boolean sConstructorFetched -> f
-    android.view.WindowInsets mInsets -> b
-    java.lang.reflect.Field sConsumedField -> c
-    boolean sConsumedFieldFetched -> d
-    1032:1035:void <clinit>() -> <clinit>
-    1039:1041:void <init>() -> <init>
-    1043:1045:void <init>(androidx.core.view.WindowInsetsCompat) -> <init>
-    1058:1058:androidx.core.view.WindowInsetsCompat build() -> a
-    1049:1053:void setSystemWindowInsets(androidx.core.graphics.Insets) -> c
-    1069:1107:android.view.WindowInsets createWindowInsetsInstance() -> d
-androidx.core.view.WindowInsetsCompat$BuilderImpl29 -> b.f.k.v$c:
+androidx.core.view.WindowInsetsCompat$BuilderImpl29 -> b.f.k.v$b:
     android.view.WindowInsets$Builder mPlatBuilder -> b
     1115:1117:void <init>() -> <init>
     1119:1124:void <init>(androidx.core.view.WindowInsetsCompat) -> <init>
     1159:1159:androidx.core.view.WindowInsetsCompat build() -> a
     1148:1149:void setStableInsets(androidx.core.graphics.Insets) -> b
     1128:1129:void setSystemWindowInsets(androidx.core.graphics.Insets) -> c
-androidx.core.view.WindowInsetsCompat$Impl -> b.f.k.v$i:
+androidx.core.view.WindowInsetsCompat$Impl -> b.f.k.v$h:
     androidx.core.view.WindowInsetsCompat mHost -> a
     575:577:void <init>(androidx.core.view.WindowInsetsCompat) -> <init>
     604:604:androidx.core.view.WindowInsetsCompat consumeDisplayCutout() -> a
@@ -8667,7 +8568,7 @@ androidx.core.view.WindowInsetsCompat$Impl -> b.f.k.v$i:
     584:584:boolean isConsumed() -> h
     656:656:int hashCode() -> hashCode
     580:580:boolean isRound() -> i
-androidx.core.view.WindowInsetsCompat$Impl20 -> b.f.k.v$e:
+androidx.core.view.WindowInsetsCompat$Impl20 -> b.f.k.v$d:
     androidx.core.graphics.Insets mSystemWindowInsets -> c
     android.view.WindowInsets mPlatformInsets -> b
     670:672:void <init>(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets) -> <init>
@@ -8675,7 +8576,7 @@ androidx.core.view.WindowInsetsCompat$Impl20 -> b.f.k.v$e:
     686:693:androidx.core.graphics.Insets getSystemWindowInsets() -> f
     699:702:androidx.core.view.WindowInsetsCompat inset(int,int,int,int) -> g
     680:680:boolean isRound() -> i
-androidx.core.view.WindowInsetsCompat$Impl21 -> b.f.k.v$f:
+androidx.core.view.WindowInsetsCompat$Impl21 -> b.f.k.v$e:
     androidx.core.graphics.Insets mStableInsets -> d
     711:712:void <init>(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets) -> <init>
     715:716:void <init>(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl21) -> <init>
@@ -8683,14 +8584,14 @@ androidx.core.view.WindowInsetsCompat$Impl21 -> b.f.k.v$f:
     732:732:androidx.core.view.WindowInsetsCompat consumeSystemWindowInsets() -> c
     738:745:androidx.core.graphics.Insets getStableInsets() -> e
     720:720:boolean isConsumed() -> h
-androidx.core.view.WindowInsetsCompat$Impl28 -> b.f.k.v$g:
+androidx.core.view.WindowInsetsCompat$Impl28 -> b.f.k.v$f:
     752:753:void <init>(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets) -> <init>
     756:757:void <init>(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl28) -> <init>
     768:768:androidx.core.view.WindowInsetsCompat consumeDisplayCutout() -> a
     762:762:androidx.core.view.DisplayCutoutCompat getDisplayCutout() -> d
     773:777:boolean equals(java.lang.Object) -> equals
     782:782:int hashCode() -> hashCode
-androidx.core.view.WindowInsetsCompat$Impl29 -> b.f.k.v$h:
+androidx.core.view.WindowInsetsCompat$Impl29 -> b.f.k.v$g:
     794:795:void <init>(androidx.core.view.WindowInsetsCompat,android.view.WindowInsets) -> <init>
     798:799:void <init>(androidx.core.view.WindowInsetsCompat,androidx.core.view.WindowInsetsCompat$Impl29) -> <init>
     832:832:androidx.core.view.WindowInsetsCompat inset(int,int,int,int) -> g
@@ -9077,7 +8978,7 @@ androidx.core.widget.TextViewCompat -> b.f.l.h:
     693:696:void setFirstBaselineToTopHeight(android.widget.TextView,int) -> g
     738:759:void setLastBaselineToBottomHeight(android.widget.TextView,int) -> h
     796:804:void setLineHeight(android.widget.TextView,int) -> i
-    884:890:void setPrecomputedText(android.widget.TextView,androidx.core.text.PrecomputedTextCompat) -> j
+    884:895:void setPrecomputedText(android.widget.TextView,androidx.core.text.PrecomputedTextCompat) -> j
     283:288:void setTextAppearance(android.widget.TextView,int) -> k
     842:869:void setTextMetricsParams(android.widget.TextView,androidx.core.text.PrecomputedTextCompat$Params) -> l
     519:523:android.view.ActionMode$Callback wrapCustomSelectionActionModeCallback(android.widget.TextView,android.view.ActionMode$Callback) -> m
@@ -11708,24 +11609,24 @@ com.biaobei.sdk.android.demo.longtime.LongTimeActivity -> com.biaobei.sdk.androi
     android.widget.TextView textView -> p
     android.os.Handler handler -> r
     com.baker.sdk.longtime.asr.listener.LongTimeAsrCallBack callBack -> s
-    26:83:void <init>() -> <init>
-    26:26:android.widget.TextView access$000(com.biaobei.sdk.android.demo.longtime.LongTimeActivity) -> F
-    119:139:void requestPermissions() -> G
-    64:77:void startRecord() -> H
-    41:57:void onCreate(android.os.Bundle) -> onCreate
-    107:112:void onDestroy() -> onDestroy
-    60:61:void start(android.view.View) -> start
-    80:81:void stop(android.view.View) -> stop
+    27:86:void <init>() -> <init>
+    27:27:android.widget.TextView access$000(com.biaobei.sdk.android.demo.longtime.LongTimeActivity) -> F
+    122:142:void requestPermissions() -> G
+    67:80:void startRecord() -> H
+    42:60:void onCreate(android.os.Bundle) -> onCreate
+    110:115:void onDestroy() -> onDestroy
+    63:64:void start(android.view.View) -> start
+    83:84:void stop(android.view.View) -> stop
 com.biaobei.sdk.android.demo.longtime.LongTimeActivity$1 -> com.biaobei.sdk.android.demo.longtime.LongTimeActivity$a:
     com.biaobei.sdk.android.demo.longtime.LongTimeActivity this$0 -> a
-    31:31:void <init>(com.biaobei.sdk.android.demo.longtime.LongTimeActivity,android.os.Looper) -> <init>
-    34:36:void handleMessage(android.os.Message) -> handleMessage
+    32:32:void <init>(com.biaobei.sdk.android.demo.longtime.LongTimeActivity,android.os.Looper) -> <init>
+    35:37:void handleMessage(android.os.Message) -> handleMessage
 com.biaobei.sdk.android.demo.longtime.LongTimeActivity$2 -> com.biaobei.sdk.android.demo.longtime.LongTimeActivity$b:
     com.biaobei.sdk.android.demo.longtime.LongTimeActivity this$0 -> a
-    83:83:void <init>(com.biaobei.sdk.android.demo.longtime.LongTimeActivity) -> <init>
-    86:90:void onError(java.lang.String,java.lang.String) -> onError
-    94:94:void onReady() -> onReady
-    98:102:void onRecording(java.lang.String,boolean) -> onRecording
+    86:86:void <init>(com.biaobei.sdk.android.demo.longtime.LongTimeActivity) -> <init>
+    89:93:void onError(java.lang.String,java.lang.String) -> onError
+    97:97:void onReady() -> onReady
+    101:105:void onRecording(java.lang.String,boolean) -> onRecording
 com.biaobei.sdk.android.demo.permission.PermissionFail -> c.b.a.a.a.b.a:
 com.biaobei.sdk.android.demo.permission.PermissionSuccess -> c.b.a.a.a.b.b:
 com.biaobei.sdk.android.demo.permission.PermissionUtil -> c.b.a.a.a.b.c:

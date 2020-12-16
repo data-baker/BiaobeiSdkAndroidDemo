@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -52,6 +53,8 @@ public class LongTimeActivity extends AppCompatActivity {
 
         String clientId = getSharedPreferences(Constants.SP_TABLE_NAME, Context.MODE_PRIVATE).getString(Constants.LONG_TIME_ASR_ONLINE_CLIENT_ID, "");//需要连续标贝申请
         String clientSecret = getSharedPreferences(Constants.SP_TABLE_NAME, Context.MODE_PRIVATE).getString(Constants.LONG_TIME_ASR_ONLINE_CLIENT_SECRET, "");//需要连续标贝申请
+        Log.d("hsj", "clientId=" + clientId);
+        Log.d("hsj", "clientSecret=" + clientSecret);
         longTimeAsr.initSdk(LongTimeActivity.this, clientId, clientSecret, callBack);
 
     }
@@ -64,7 +67,7 @@ public class LongTimeActivity extends AppCompatActivity {
         if (longTimeAsr != null) {
             //*********************************设置参数****************************
             //音频采样率，支持16000(默认)，8000
-            longTimeAsr.setSampleRate(16000);
+            longTimeAsr.setSampleRate(8000);
             //是否在短静音处添加标点，默认true
             longTimeAsr.setAddPct(true);
             //模型名称，必须填写公司购买的语言模型，默认为common

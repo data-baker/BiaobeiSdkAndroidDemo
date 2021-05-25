@@ -103,6 +103,11 @@ public class LongTimeActivity extends AppCompatActivity {
             message.obj = result;
             handler.sendMessage(message);
         }
+
+        @Override
+        public void onStop() {
+
+        }
     };
 
     @Override
